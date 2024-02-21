@@ -1,0 +1,44 @@
+.addbook
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerbox
+{
+    margin-top: 10px;
+    margin-bottom: 100px;
+    background-color: white;
+    padding:30px;
+    height:700px;
+    width:500px;
+    border-radius:50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+textarea
+{
+    width:100%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+input{
+    width:97%;
+}
+
+.addbtn
+{
+    margin-left:5%;
+    background-color: white;
+    border:1px solid black;
+    padding:20px;
+    border-radius: 20px;
+}
+
+.addbtn:hover{
+    background-color: rgb(204, 204, 204);
+}
