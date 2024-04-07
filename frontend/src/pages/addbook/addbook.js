@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './addbook.css';
 import axios from 'axios';
+import {useNavigate} from "react-router-dom";
 
 function Addbook() {
   const [title, setTitle] = useState('');
@@ -10,6 +11,8 @@ function Addbook() {
   const [count,setCount] = useState(' ');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,6 +29,8 @@ function Addbook() {
       setSuccessMessage(response.data.message);
       setError('');
       alert(response.data.message);
+      navigate("/admin");
+      
     } catch (error) {
       if (error.response) {
         setError(error.response.data.error);

@@ -1,6 +1,6 @@
 .centertopic
 {
-    margin-left: 60px;
+    margin-left: 160px;
 }
 
 .borrowbookbtn
@@ -17,4 +17,24 @@
 .borrowbookbtn:hover
 {
     background-color: rgb(204, 204, 204);
+}
+
+.Filterbtn
+{
+    padding:5px 10px 5px 10px;
+    background:#fff;
+    border-radius:5px;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+.Filterbtn:hover
+{
+    background-color: rgb(204, 204, 204);
+}
+
+.filterdrop
+{
+    padding:5px;
+    margin-right:10px;
 }

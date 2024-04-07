@@ -58,6 +58,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './userpage.css';
 import { useNavigate } from 'react-router-dom';
+import { DataGrid } from '@mui/x-data-grid';
 
 function Userpage() {
 
@@ -112,6 +113,17 @@ function Userpage() {
     setFilterValue('');
   };
 
+
+  // const [datad, setDatad] = useState([]);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [itemsPerPage, setItemsPerPage] = useState(5);
+
+  // useEffect(() => {
+  //   axios.get(`http://localhost:8081/admin?_page=${currentPage}&_limit=${itemsPerPage}`)
+  //     .then(res => setData(res.datad))
+  //     .catch(err => console.log(err));
+  // }, [currentPage, itemsPerPage]);
+
   return (
     <div className='userpage'>
 
@@ -119,7 +131,7 @@ function Userpage() {
       <h1 className='centertopic'>LIST OF BOOKS</h1>
 
       <div className="filters">
-        <select value={filterType} onChange={handleFilterChange}>
+        <select value={filterType} onChange={handleFilterChange} className='filterdrop'>
           <option value="">Select Filter</option>
           <option value="title">Title</option>
           <option value="author">Author</option>
@@ -129,8 +141,8 @@ function Userpage() {
         {filterType && (
           <input type="text" className='filterinput' value={filterValue} onChange={handleFilterValueChange} />
         )}
-        <button onClick={handleFilter}>Filter</button>
-        <button onClick={handleResetFilter}>Reset</button>
+        <button onClick={handleFilter} className="Filterbtn">Filter</button>
+        <button onClick={handleResetFilter} className="Filterbtn">Reset</button>
       </div>
 
       <table>
@@ -156,6 +168,27 @@ function Userpage() {
           ))}
         </tbody>
       </table>
+
+
+   {/* <div style={{ height: 600, width: '100%' }}>
+        <DataGrid
+          rows={filteredData}
+          columns={[
+            { field: 'title', headerName: 'Book Title', flex: 1 },
+            { field: 'author', headerName: 'Author', flex: 1 },
+            { field: 'subject', headerName: 'Subject', flex: 1 },
+            { field: 'published', headerName: 'Published Year', flex: 1 },
+            { field: 'count', headerName: 'Count', flex: 1 },
+          ]}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 9 },
+            },
+          }}
+          pageSizeOptions={[5,7,9,10]}
+          checkboxSelection
+        />
+      </div> */}
 
     </div>
   )
